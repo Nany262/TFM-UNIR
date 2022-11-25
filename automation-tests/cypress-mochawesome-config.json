@@ -1,0 +1,21 @@
+{
+    "reporterEnabled": "cypress-mochawesome-reporter,mocha-junit-reporter",
+    "cypressMochawesomeReporterReporterOptions": {
+      "reportDir": "cypress/reports/mocha",
+      "json":true,
+      "reportFilename":"test_[datetime]_report",
+      "timestamp": "yyyy-mm-dd_HH-MM-ss",
+      "reportTitle":"Grades report automated test",
+      "reportPageTitle": "Grades report automated test",
+      "embeddedScreenshots": true,
+      "inlineAssets": true,
+      "charts":true,
+      "code":false,
+      "html":true,
+      "overwrite":false
+    },
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "cypress/reports/junit/results-[hash].xml",
+      "includePending": true
+    }
+  }
