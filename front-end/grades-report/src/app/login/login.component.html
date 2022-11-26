@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="center-content">
+    <mat-card>
+        <div class="login-form">
+            <h3 class="notable-item title-text">Fundación Liceo Ingles</h3>
+            <p class="notable-item comment-text">Reporte de calificaciones</p>
+
+            <img src="/assets/img/bag-login.png" alt="image">
+
+            <h3 class="title">Inicio de sesión</h3>
+            <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+                <div>
+                    <mat-form-field class="login-inputs">
+                        <mat-label for="email">
+                            <mat-icon>account_circle</mat-icon> Correo
+                        </mat-label>
+                        <input id="email-input" matInput placeholder="Correo" id="email" type="email"
+                            formControlName="email" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="login-inputs">
+                        <mat-label for="password">
+                            <mat-icon>lock</mat-icon> Contraseña
+                        </mat-label>
+                        <input id="password-input" matInput placeholder="Contraseña" id="password" type="password"
+                            formControlName="password" required>
+                    </mat-form-field>
+                </div>
+                <button id="login-button" mat-flat-button color="primary" class="button" type="submit">Login</button>
+            </form>
+            <div>¿Olvidaste tu contraseña?</div>
+            <div>Contacta a un admin</div>
+        </div>
+    </mat-card>
+</div>

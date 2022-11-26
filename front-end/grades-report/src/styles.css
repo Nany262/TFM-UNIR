@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.title {
+    font-family: 'Righteous', cursive;
+}
+
+.notable-item {
+    font-family: 'Public Sans', sans-serif;
+    color: #21ABA5;
+}

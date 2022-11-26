@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login.component';
 
@@ -10,6 +10,9 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        ReactiveFormsModule
+      ],
       declarations: [LoginComponent]
     })
       .compileComponents();
@@ -32,10 +35,10 @@ describe('LoginComponent', () => {
   });
 
   it('should validate correct user and password', () => {
-    /*component.loginForm = formBuilder.group({
+    component.loginForm = formBuilder.group({
       email: 'test@test.com',
       password: 'Test12345'
-    });*/
+    });
     fixture.nativeElement.querySelector('button').click();
     expect(component.login()).toEqual('login_valid')
 
@@ -43,10 +46,10 @@ describe('LoginComponent', () => {
 
   it('should deny access with incorrect user and password', () => {
     let alertMessage = 'Ooops! Correo o contraseña incorrectas, si olvidaste tu contraseña contacta con tu administrador';
-    /*component.loginForm = formBuilder.group({
+    component.loginForm = formBuilder.group({
       email: 'test@test.com',
       password: 'invalidpass'
-    });*/
+    });
     fixture.nativeElement.querySelector('button').click();
     expect(fixture.nativeElement.querySelector('alert-form').text).toEqual(alertMessage)
     expect(component.login()).toEqual('login_invalid')

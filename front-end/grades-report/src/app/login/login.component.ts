@@ -7,14 +7,17 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginForm: FormBuilder;
+  loginForm;
 
   constructor(private formBuilder: FormBuilder) {
-    this.loginForm = new FormBuilder()
+    this.loginForm = this.formBuilder.group({
+      email: '',
+      password: ''
+    })
   }
 
-  login() {
-    console.log('test');
-    return 'test'
+  onSubmit(userData: any){
+    this.loginForm.reset();
+    console.log('The login info is', userData)
   }
 }
