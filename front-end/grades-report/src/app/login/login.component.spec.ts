@@ -1,5 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from './login.component';
 
@@ -11,7 +16,12 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatButtonModule,
+        MatInputModule,
+        MatIconModule,
       ],
       declarations: [LoginComponent]
     })
@@ -28,10 +38,11 @@ describe('LoginComponent', () => {
 
   //Debemos obtener una respuesta de ko si alguno de los campos viene vacío
   it('should detect form is valid', () => {
-    let alertMessage = 'Por favor ingrese los campos obligatorios (*) faltantes'
-    fixture.nativeElement.querySelector('button').click();
-    expect(fixture.nativeElement.querySelector('alert-form').text).toEqual(alertMessage)
-    expect(component.login()).toEqual('invalid_form');
+    let alertMessage = 'Ingrese los campos obligatorios (*) faltantes'
+    component.loginForm.markAllAsTouched();
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('mat-error').innerText).toEqual(alertMessage)
+    expect(fixture.nativeElement.querySelector('button').disabled).toBeTruthy();
   });
 
   it('should validate correct user and password', () => {
@@ -40,7 +51,7 @@ describe('LoginComponent', () => {
       password: 'Test12345'
     });
     fixture.nativeElement.querySelector('button').click();
-    expect(component.login()).toEqual('login_valid')
+    expect(component.onSubmit(component.loginForm)).toEqual('login_valid')
 
   });
 
@@ -51,7 +62,7 @@ describe('LoginComponent', () => {
       password: 'invalidpass'
     });
     fixture.nativeElement.querySelector('button').click();
-    expect(fixture.nativeElement.querySelector('alert-form').text).toEqual(alertMessage)
-    expect(component.login()).toEqual('login_invalid')
+    expect(fixture.nativeElement.querySelector('mat-error').innerText).toEqual(alertMessage)
+    expect(component.onSubmit(component.loginForm)).toEqual('login_invalid')
   });
 });

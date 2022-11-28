@@ -13,8 +13,9 @@
                         <mat-label for="email">
                             <mat-icon>account_circle</mat-icon> Correo
                         </mat-label>
-                        <input id="email-input" matInput placeholder="Correo" id="email" type="email"
+                        <input matInput placeholder="Correo" id="email" type="email"
                             formControlName="email" required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
@@ -22,15 +23,14 @@
                         <mat-label for="password">
                             <mat-icon>lock</mat-icon> Contraseña
                         </mat-label>
-                        <input id="password-input" matInput placeholder="Contraseña" id="password" type="password"
+                        <input matInput placeholder="Contraseña" id="password" type="password"
                             formControlName="password" required>
+                        <mat-error class="error" *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
                     </mat-form-field>
                 </div>
-                <button id="login-button" mat-flat-button color="primary" class="button title"
-                    type="submit">Login</button>
+                <button [disabled]="loginForm.invalid" id="login-button" mat-flat-button color="primary" class="button title"
+                    type="submit">Iniciar</button>
             </form>
-
-
 
             <div class="contact-admin"><a href="url">
                     <mat-icon>help</mat-icon>
