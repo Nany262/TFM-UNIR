@@ -1,17 +1,25 @@
 import express, { Express, Request, Response } from 'express';
+import { routersAPI } from './routes'
+import cors from 'cors';
 
 const app: Express = express();
 const port = 3000;
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
-});
+app.use(express.json());
+const whiteList = ['http://localhost:4200'];
+const options = {
+  origin: (origin: any, callback: any) => {
+    if (whiteList.includes(origin)) {
+      callback(null, true)
+    }
+    else { callback(new Error('no permitido')) }
+  }
+}
+app.use(cors(options));
+routersAPI(app);
 
-app.post('/login', (req: Request, res: Response) => {
-  res.json({
-    email:'test@test.com',
-    password:'Test1234'
-  });
+app.get('/', (req: Request, res: Response) => {
+  res.send('Working now!!!');
 });
 
 app.listen(port, () => {
