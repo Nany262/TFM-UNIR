@@ -13,6 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SubjectsComponent } from './subjects/subjects.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SubjectsComponent,
+    TeachersComponent
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },

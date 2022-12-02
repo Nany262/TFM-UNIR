@@ -18,7 +18,8 @@ export class UserService {
             const selectRes = await client.query(querySelect)
             res.json({
                 email: email,
-                status: selectRes.rows[0].is_active
+                status: selectRes.rows[0].is_active,
+                role: selectRes.rows[0].role
             })
         }
         else { next(boom.unauthorized('Non-existent user')) }

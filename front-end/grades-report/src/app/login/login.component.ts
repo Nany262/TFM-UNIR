@@ -25,7 +25,6 @@ export class LoginComponent {
     this.email = userData.email;
     this.password = userData.password;
     this.validateDataLogin()
-    this.loginForm.reset();
   };
 
   validateDataLogin() {
@@ -36,8 +35,12 @@ export class LoginComponent {
 
     this.dataService.postLogin(bodyLogin).subscribe({
       next: res => {
-        this.invalidLogin = ''
-        this.router.navigateByUrl('/materias');
+        console.log(res)
+        if (res.role === 'C'){
+          this.router.navigateByUrl('/profesores');
+        } else{
+          this.router.navigateByUrl('/materias');
+        }
       }
       , error: e => {
         this.invalidLogin = '¡Ooops! Correo o contraseña incorrectas, si olvidaste tu contraseña contacta con tu administrador';
