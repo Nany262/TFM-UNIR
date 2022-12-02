@@ -3,10 +3,15 @@ Feature: Login into portal - GUI Tests
     I want to login into the portal
     To check the subject list
 
-    Scenario: Login with a valid user
-        Given I am an unauthenticated teacher
+    Scenario: Login with a valid teacher
+        Given I am an unauthenticated user
         When  I login with the email "gloaocampo@liceoingles.edu.co" and password "Test1234"
         Then  I expect to see my assigned subjects
+
+    Scenario: Login with a valid coordinator
+        Given I am an unauthenticated user
+        When  I login with the email "linaarias@liceoingles.edu.co" and password "Test1234"
+        Then  I expect to see the hired teachers
 
     Scenario Outline: Login with an invalid user
         Given I am an unauthenticated teacher
