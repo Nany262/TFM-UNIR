@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input'
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input'
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { DataService } from './services/data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -21,14 +23,16 @@ import {MatCardModule} from '@angular/material/card';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
     LoginComponent
   ],
   providers: [
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
+    DataService
   ],
   bootstrap: [AppComponent]
 })

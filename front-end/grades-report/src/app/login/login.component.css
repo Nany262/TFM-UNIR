@@ -15,33 +15,36 @@
 .login-form {
   padding-left: 300px !important;
   padding-right: 300px !important;
+  width: 350px;
 }
 
 .title-text {
   font-size: 19px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20%;
   margin-bottom: 5px;
 
 }
 
+.login-image{
+  margin-left: 15%;
+}
+
 .comment-text {
   font-size: 15px;
-  margin-left: 20px;
+  margin-left: 25%;
   margin-top: 5px;
-  margin-right: 20px;
 }
 
 .title {
   font-size: 27px;
   color: #007B73 !important;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 25%;
   margin-top: 0;
 }
 
 ::ng-deep .login-inputs {
   width: 100%;
+  padding-bottom: 10px;
 }
 
 #login-button {
@@ -65,4 +68,8 @@ a:link{
 
 a:visited {
   color: #007B73;
+}
+
+.error{
+  padding-top: 30px;
 }

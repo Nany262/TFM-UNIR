@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,7 +20,8 @@ describe('AppComponent', () => {
         MatButtonModule,
         MatInputModule,
         MatIconModule,
-        MatCardModule
+        MatCardModule,
+        HttpClientTestingModule
       ],
       declarations: [
         AppComponent,
