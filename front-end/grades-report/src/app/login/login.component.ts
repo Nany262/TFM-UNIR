@@ -40,7 +40,7 @@ export class LoginComponent {
         this.router.navigateByUrl('/materias');
       }
       , error: e => {
-        this.invalidLogin = 'Ooops! Correo o contraseña incorrectas, si olvidaste tu contraseña contacta con tu administrador';
+        this.invalidLogin = '¡Ooops! Correo o contraseña incorrectas, si olvidaste tu contraseña contacta con tu administrador';
       }
     })
   }

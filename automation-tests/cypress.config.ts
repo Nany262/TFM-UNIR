@@ -7,12 +7,13 @@ export default defineConfig({
   viewportHeight: 1000,
   viewportWidth: 1920,
   requestTimeout: 5000,
-  defaultCommandTimeout: 6000,
+  defaultCommandTimeout: 8000,
+  responseTimeout: 12000,
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
     reporterEnabled: "mochawesome",
     mochawesomeReporterOptions: {
-      reportDir: "cypress/reports/mocha",
+      reportDir: "reports/mocha",
       quite: true,
       overwrite: false,
       html: false,
@@ -28,14 +29,14 @@ export default defineConfig({
   watchForFileChanges: false,
   e2e: {
     //If the base url is not set as env variable it takes a default value
-    baseUrl: "https://agent-test.sellwhenever.com/",
+    baseUrl: "http://localhost:4200",
     specPattern: "cypress/**/features/**",
     supportFile: "cypress/support/e2e.ts",
     excludeSpecPattern: ["*.js", "*.ts", "*.md"],
     experimentalSessionAndOrigin: true,
     slowTestThreshold: 15000,
-    testIsolation:"off",
-    screenshotOnRunFailure: true,
+    testIsolation: "off",
+    screenshotOnRunFailure: false,
     setupNodeEvents
   }
 });
@@ -49,11 +50,11 @@ async function setupNodeEvents(
 
   console.info("setupNodeEvents.\nCurrent reporter", config.reporter);
 
-  if( config.reporter &&
+  if (config.reporter &&
     (config.reporter as string).includes("cypress-multi-reporters") &&
     config?.reporterOptions?.configFile &&
     (config.reporterOptions.configFile as string).includes("cypress-mochawesome-config")
-  ){
+  ) {
     console.info("Enabling the cypress-mochawesome-reporter plugin");
     require("cypress-mochawesome-reporter/plugin")(on);
   }

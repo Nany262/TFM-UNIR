@@ -1,26 +1,38 @@
 import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
 
-Given("I want to do a request with the email {string} and the password {string}", (email:string, password:string) => {
-    cy.log("to do")
+let bodyFeature: any;
+let urlFeature: string;
+const METHOD = 'POST'
+
+Given("I want to do a request with the email {string} and the password {string}", (emailTest: string, passwordTest: string) => {
+    bodyFeature = {
+        email: emailTest,
+        password: passwordTest
+    }
 });
 
 Given("I want to do a request with empty body", () => {
-    cy.log("to do")
+    bodyFeature = {
+    }
 });
 
 Given("I want to do a request without body", () => {
-    cy.log("to do")
+    bodyFeature = null
 });
 
-
-When("I do the POST request to {string} service", (url:string) => {
-    cy.log("to do")
+When("I do the POST request to {string} service", (url: string) => {
+    urlFeature = url;
 });
 
-Then("I expect to see a {string} status", (status:string) => {
-    expect(true).to.be.false
-});
-
-Then("should include the {string} status", (appStatus:string) => {
-    expect(true).to.be.false
+Then("I expect to see a {int} status", (status: string) => {
+    cy.request({
+        method: METHOD,
+        url: urlFeature,
+        body: bodyFeature,
+        failOnStatusCode:false,
+    })
+        .should((response) => {
+            expect(response.status).to.eq(status)
+            cy.log(JSON.stringify(response.body))
+        });
 });

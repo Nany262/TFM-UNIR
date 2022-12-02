@@ -23,4 +23,4 @@ Feature: Login into portal - GUI Tests
     Scenario: Empty fields on login
         Given I am an unauthenticated teacher
         When I login without fill the form
-        Then I expect to see an alert with the text "Por favor ingrese los campos obligatorios (*) faltantes"
+        Then I expect to see an alert with the text "Campo obligatorio (*)"
