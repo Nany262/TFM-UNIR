@@ -1,17 +1,19 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataService } from '../services/data.service';
 
 import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+  let service: DataService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -24,17 +26,25 @@ describe('LoginComponent', () => {
         MatIconModule,
         HttpClientTestingModule
       ],
+      providers: [
+        DataService
+      ],
       declarations: [LoginComponent]
     })
       .compileComponents();
 
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
+    service = component.dataService;
     fixture.detectChanges();
   });
 
   it('should create the login component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should inject DataService', () => {
+    expect(service).toBeTruthy();
   });
 
   //Debemos obtener una respuesta de ko si alguno de los campos viene vacío
@@ -59,10 +69,10 @@ describe('LoginComponent', () => {
     let alertMessage = 'Ooops! Correo o contraseña incorrectas, si olvidaste tu contraseña contacta con tu administrador';
     let email = fixture.componentInstance.loginForm.controls['email']
     let password = fixture.componentInstance.loginForm.controls['password']
-    
+
     email.setValue('test@test.com')
     password.setValue('invalidpass')
     fixture.nativeElement.querySelector('button').click();
-    expect(component.invalidLogin).toEqual('')
+    expect(component.invalidLogin).toEqual(alertMessage)
   });
 });

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { DataService } from './services/data.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -22,6 +23,9 @@ describe('AppComponent', () => {
         MatIconModule,
         MatCardModule,
         HttpClientTestingModule
+      ],
+      providers: [
+        DataService
       ],
       declarations: [
         AppComponent,

@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input'
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SubjectsComponent } from './subjects/subjects.component';
@@ -26,7 +27,8 @@ import { TeachersComponent } from './teachers/teachers.component';
     MatInputModule,
     MatIconModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule
   ],
   declarations: [
     AppComponent,

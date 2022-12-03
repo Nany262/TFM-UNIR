@@ -10,7 +10,8 @@ describe('DataService', () => {
   let httpMock: HttpTestingController;
   let mockResponse: LoginInterface = {
     email: "gloaocampo@liceoingles.edu.co",
-    status: true
+    status: true,
+    role:'T'
   }
 
   beforeEach(() => {

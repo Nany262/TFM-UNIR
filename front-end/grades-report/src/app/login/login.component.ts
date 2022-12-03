@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,10 @@ export class LoginComponent {
   password = new FormControl('', [Validators.required]);
   invalidLogin = '';
 
-  constructor(private formBuilder: FormBuilder, private dataService: DataService, public router: Router) {
+  constructor(private formBuilder: FormBuilder,
+    public dataService: DataService,
+    public router: Router,
+    private cookieService: CookieService) {
     this.loginForm = this.formBuilder.group({
       email: '',
       password: ''
@@ -36,11 +40,12 @@ export class LoginComponent {
     this.dataService.postLogin(bodyLogin).subscribe({
       next: res => {
         console.log(res)
-        if (res.role === 'C'){
+        if (res.role === 'C') {
           this.router.navigateByUrl('/profesores');
-        } else{
+        } else {
           this.router.navigateByUrl('/materias');
         }
+        this.cookieService.set('email', res.email);
       }
       , error: e => {
         this.invalidLogin = '¡Ooops! Correo o contraseña incorrectas, si olvidaste tu contraseña contacta con tu administrador';
