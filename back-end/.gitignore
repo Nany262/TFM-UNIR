@@ -6,6 +6,7 @@
 /out-tsc
 /bazel-out
 /postgres_data
+/pgadmin_data
 
 # Node
 /node_modules

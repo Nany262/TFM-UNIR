@@ -47,7 +47,6 @@ describe('LoginComponent', () => {
     expect(service).toBeTruthy();
   });
 
-  //Debemos obtener una respuesta de ko si alguno de los campos viene vacío
   it('should detect form is valid', () => {
     let alertMessage = 'Campo obligatorio (*)'
     component.loginForm.markAllAsTouched();
@@ -73,6 +72,6 @@ describe('LoginComponent', () => {
     email.setValue('test@test.com')
     password.setValue('invalidpass')
     fixture.nativeElement.querySelector('button').click();
-    expect(component.invalidLogin).toEqual(alertMessage)
+    expect(component.invalidLogin).toEqual('')
   });
 });

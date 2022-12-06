@@ -26,8 +26,6 @@ export class UserService {
         return res
     }
 
-    findOne() { }
-
     update() { }
 
     delete() { }
