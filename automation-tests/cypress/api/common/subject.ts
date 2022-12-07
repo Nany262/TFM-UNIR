@@ -16,7 +16,7 @@ Given("I want to do a request without query", (emailTest: string, passwordTest: 
     user = emailTest;
 });
 
-When("I do the POST request to {string} service", (url: string) => {
+When("I do the GET request to {string} service", (url: string) => {
     urlFeature = url;
 });
 

@@ -12,9 +12,9 @@ Given("I am an unauthenticated user", () => {
 });
 
 When("I login with the email {string} and password {string}", (email: string, password: string) => {
-    /*loginPage.email().type(email);
+    loginPage.email().type(email);
     loginPage.password().type(password);
-    loginPage.loginButton().click();*/
+    loginPage.loginButton().click();
 });
 
 When("I login without fill the form", () => {
@@ -28,8 +28,7 @@ Then("I expect to see my assigned subjects", () => {
 });
 
 Then("I expect to see the hired teachers", () => {
-    //teachersPage.titlePage().should('be.visible').and('contain','Profesores')
-    expect(true).to.be.true
+    teachersPage.titlePage().should('be.visible').and('contain','Profesores')
 });
 
 Then("I expect to see an alert with the text {string}", (text: string) => {
