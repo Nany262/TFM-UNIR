@@ -6,19 +6,19 @@ Feature: Login into portal - API Tests
     Scenario: Valid structure with a existing teacher
         Given I want to do a request with the email "gloaocampo@liceoingles.edu.co" and the password "Test1234"
         When  I do the POST request to "http://localhost:3000/user/login" service
-        Then  I expect to see a 200 status
+        Then  I expect to see a 200 status on login service
 
     Scenario: Valid structure with a no-existing teacher
         Given I want to do a request with the email "noexiste@liceoingles.edu.co" and the password "Test1234"
         When  I do the POST request to "http://localhost:3000/user/login" service
-        Then  I expect to see a 401 status
+        Then  I expect to see a 401 status on login service
 
     Scenario: Valid structure with a empty body
         Given I want to do a request with empty body
         When  I do the POST request to "http://localhost:3000/user/login" service
-        Then  I expect to see a 400 status
+        Then  I expect to see a 400 status on login service
 
     Scenario: Valid structure with a empty body
         Given I want to do a request without body
         When  I do the POST request to "http://localhost:3000/user/login" service
-        Then  I expect to see a 400 status
+        Then  I expect to see a 400 status on login service

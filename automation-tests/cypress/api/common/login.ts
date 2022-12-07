@@ -24,7 +24,7 @@ When("I do the POST request to {string} service", (url: string) => {
     urlFeature = url;
 });
 
-Then("I expect to see a {int} status", (status: string) => {
+Then("I expect to see a {int} status on login service", (status: string) => {
     cy.request({
         method: METHOD,
         url: urlFeature,
