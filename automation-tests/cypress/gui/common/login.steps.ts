@@ -1,14 +1,12 @@
 import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import { GeneralPage } from "../page-object/general.page";
 import { LoginPage } from "../page-object/login.page";
-import { SubjectsPage } from "../page-object/subjects.page";
-import { TeachersPage } from "../page-object/teachers.page";
 
 const loginPage = new LoginPage();
-const subjectsPage = new SubjectsPage();
-const teachersPage = new TeachersPage();
+const generalPage = new GeneralPage();
 
 Given("I am an unauthenticated user", () => {
-   // cy.visit("/");
+   cy.visit("/");
 });
 
 When("I login with the email {string} and password {string}", (email: string, password: string) => {
@@ -24,11 +22,11 @@ When("I login without fill the form", () => {
 });
 
 Then("I expect to see my assigned subjects", () => {
-    subjectsPage.titlePage().should('be.visible').and('contain','Mis materias')
+    generalPage.titlePage().should('be.visible').and('contain','Materias')
 });
 
 Then("I expect to see the hired teachers", () => {
-    teachersPage.titlePage().should('be.visible').and('contain','Profesores')
+    generalPage.titlePage().should('be.visible').and('contain','Profesores')
 });
 
 Then("I expect to see an alert with the text {string}", (text: string) => {

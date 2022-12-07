@@ -3,6 +3,7 @@ Feature: Login into portal - API Tests
     I want to login into the portal
     To check the subject list
 
+@ignore
     Scenario: Valid structure with a existing teacher
         Given I want to do a request with the email "gloaocampo@liceoingles.edu.co" and the password "Test1234"
         When  I do the POST request to "http://localhost:3000/user/login" service

@@ -1,4 +1,4 @@
-Feature: Subject listing- API Tests
+Feature: Subject listing - GUI Tests
     As a teacher
     I want check the status of my assigned subjects
     To evaluate the students according to the subject

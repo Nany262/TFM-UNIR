@@ -4,6 +4,6 @@ export class GeneralPage {
     }
 
     titlePage() {
-        return cy.get('#title page');
+        return cy.get('#title-page')
     }
 }

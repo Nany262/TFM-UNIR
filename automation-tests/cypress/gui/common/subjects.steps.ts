@@ -7,13 +7,6 @@ const loginPage = new LoginPage();
 const subjectsPage = new SubjectsPage();
 const generalPage = new GeneralPage();
 
-Given("I login with the email {string} and password {string}", (email: string, password: string) => {
-    // cy.visit("/");
-    loginPage.email().type(email);
-    loginPage.password().type(password);
-    loginPage.loginButton().click();
-});
-
 When("I see my assigned subjects", () => {
     generalPage.titlePage().should('be.visible').and('contain', 'Mis materias')
     cy.get('@subjectListResponse').then((response) => {
