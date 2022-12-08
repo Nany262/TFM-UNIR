@@ -39,13 +39,13 @@ export class LoginComponent {
 
     this.dataService.postLogin(bodyLogin).subscribe({
       next: res => {
-        console.log(res)
         if (res.role === 'C') {
           this.router.navigateByUrl('/profesores');
         } else {
           this.router.navigateByUrl('/materias');
         }
         this.cookieService.set('email', res.email);
+        this.cookieService.set('id', res.id.toString())
       }
       , error: e => {
         this.invalidLogin = '¡Ooops! Correo o contraseña incorrectas, si olvidaste tu contraseña contacta con tu administrador';

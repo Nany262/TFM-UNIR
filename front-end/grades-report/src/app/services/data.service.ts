@@ -16,7 +16,11 @@ export class DataService {
     return this._http.post<LoginInterface>(`${this.url}/user/login`, body)
   }
 
-  getSubjects() {
-    return this._http.get<SubjectInterface[]>(`${this.url}/subject/:id`)
+  putLogout(body: any) {
+    return this._http.put<LoginInterface>(`${this.url}/user/logout`, body)
+  }
+
+  getSubjects(id: any) {
+    return this._http.get<SubjectInterface[]>(`${this.url}/subjects/${id}`)
   }
 }

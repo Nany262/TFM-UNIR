@@ -3,12 +3,16 @@
     <img class="principal-image" src="/assets/img/bag-login.png" alt="image">
     <h1 class="title" id="title-page">Materias</h1>
     <span class="example-spacer"></span>
-    <button mat-icon-button id="logout-button">
+    <button mat-icon-button id="logout-button" (click)="logout()">
       <mat-icon>exit_to_app</mat-icon>
     </button>
   </mat-toolbar>
 
   <div class="subject-cards">
+    <div class="not-found center-content" *ngIf="subjects.length === 0">
+      <img class='image-notfound' src="/assets/img/not-found.png" alt="image">
+      <h2 class="text-notfound">Aún no tienes materias asignadas</h2>
+    </div>
     <br>
     <mat-card class='card' *ngFor="let item of subjects">
       <div class="subject">
@@ -20,7 +24,7 @@
             <mat-icon class='todo-status' *ngIf="item.progress === 'Por Realizar'">
               error_circle_rounded
             </mat-icon>
-            <mat-icon class='progress-status' *ngIf="item.progress === 'En proceso'">
+            <mat-icon class='progress-status' *ngIf="item.progress === 'En Proceso'">
               build_circle
             </mat-icon>
             <mat-icon class='completed-status' *ngIf="item.progress === 'Completado'">

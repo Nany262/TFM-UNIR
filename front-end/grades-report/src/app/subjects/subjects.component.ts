@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { DataService } from '../services/data.service';
 import { SubjectInterface } from './subjects.interface';
@@ -10,28 +11,34 @@ import { SubjectInterface } from './subjects.interface';
 })
 export class SubjectsComponent {
   email: string
-  subjects: SubjectInterface[] = [{
-    name: "Informatica",
-    description: "En informática, una clase es una plantilla para el objetivo de la creación de objetos de datos según un modelo predefinido.",
-    progress: 'En proceso',
-    image: './asset'
-  }, {
-    name: "Investigación",
-    description: "Como vemos, la investigación científica presenta varios aspectos a tener en cuenta.",
-    progress: 'Por Realizar',
-    image: './asset'
-  },
-  {
-    name: "Programación",
-    description: "En informática, una clase es una plantilla para el objetivo de la creación de objetos de datos según un modelo predefinido.",
-    progress: 'Completado',
-    image: './asset'
-  }]
+  id: string
+  subjects: SubjectInterface[] = []
 
-  constructor(private cookieService: CookieService,
-    public dataService: DataService,) {
+  constructor(public cookieService: CookieService,
+    public dataService: DataService,
+    public router: Router) {
     this.email = this.cookieService.get('email');
+    this.id = this.cookieService.get('id')
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    if (this.email != '' && this.id != '') {
+      this.dataService.getSubjects(this.id).subscribe((res) => {
+        this.subjects = res
+      })
+    } else {
+      this.router.navigateByUrl('/');
+    }
+  }
+
+  logout() {
+    const bodyLogout = {
+      email: this.email
+    }
+    this.dataService.putLogout(bodyLogout).subscribe((res) => {
+      console.log(res);
+      this.cookieService.deleteAll();
+      this.router.navigateByUrl('/');
+    })
+  }
 }
