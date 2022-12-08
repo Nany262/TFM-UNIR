@@ -1,16 +1,17 @@
-import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import { Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import { getSubjectList } from "cypress/support/services/subjectList";
 import { GeneralPage } from "../page-object/general.page";
-import { LoginPage } from "../page-object/login.page";
 import { SubjectsPage } from "../page-object/subjects.page";
 
-const loginPage = new LoginPage();
 const subjectsPage = new SubjectsPage();
 const generalPage = new GeneralPage();
 
 When("I see my assigned subjects", () => {
-    generalPage.titlePage().should('be.visible').and('contain', 'Mis materias')
+    generalPage.titlePage().should('be.visible').and('contain', 'Materias')
+    getSubjectList('1')
     cy.get('@subjectListResponse').then((response) => {
-        for (let i = 0; i <= response.length; i++) {
+        console.log(response)
+        for (let i = 2; i <= response.length + 1; i++) {
             subjectsPage.subjectListOne(i).should('be.visible').and('contain', response[i])
         }
     })

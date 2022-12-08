@@ -4,7 +4,7 @@ import { userRouter } from './user.router'
 
 function routersAPI(app: Express) {
     app.use('/user', userRouter)
-    app.use('/subject', subjectRouter)
+    app.use('/subjects', subjectRouter)
 }
 
 export { routersAPI }

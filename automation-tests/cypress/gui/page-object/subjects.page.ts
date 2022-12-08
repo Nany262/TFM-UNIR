@@ -4,12 +4,12 @@ export class SubjectsPage {
     }
 
     subjectListOne(position: number) {
-        return cy.get(`mat-card-${position}`)
+        return cy.get(`:nth-child(${position}) > .subject > .mat-mdc-card-title > .subject-name`)
     }
 
     subjectButton() { return cy.get('#subject-button') }
 
-    subjectStatus(){
+    subjectStatus() {
         return cy.get('#subject-status')
     }
 }

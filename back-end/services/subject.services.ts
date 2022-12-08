@@ -13,9 +13,8 @@ export class SubjectService {
             const client = await getConnection();
             const selectRes = await client.query(querySelect)
             if (selectRes.rows.length != 0) {
-                res.json({
-                    subjects: selectRes.rows
-                })
+                res.json(
+                    selectRes.rows)
             }
             else { next(boom.notFound('User without subjects assigned')) }
         }

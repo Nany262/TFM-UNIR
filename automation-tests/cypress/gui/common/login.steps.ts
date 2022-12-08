@@ -10,6 +10,7 @@ Given("I am an unauthenticated user", () => {
 });
 
 When("I login with the email {string} and password {string}", (email: string, password: string) => {
+    cy.visit("/");
     loginPage.email().type(email);
     loginPage.password().type(password);
     loginPage.loginButton().click();

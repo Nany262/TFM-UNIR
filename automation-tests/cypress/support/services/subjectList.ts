@@ -1,7 +1,7 @@
-function getSubjectList() {
+export function getSubjectList(id: string) {
     cy.request({
         method: 'GET',
-        url: 'http://localhost:3000/subject/',
+        url: `http://localhost:3000/subjects/${id}`,
         failOnStatusCode: false
     })
         .should((response) => {
