@@ -8,4 +8,8 @@ const loginUserSchema = Joi.object({
     password: password.required()
 })
 
-export { loginUserSchema }
+const logoutUserSchema = Joi.object({
+    email: email.required()
+})
+
+export { loginUserSchema, logoutUserSchema }
