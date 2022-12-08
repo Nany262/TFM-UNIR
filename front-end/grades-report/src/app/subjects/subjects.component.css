@@ -1,0 +1,85 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.subject-page {
+  background-color: #21ABA5 !important;
+  height: 100%;
+}
+
+.subject-cards {
+  background-color: white;
+  border-radius: 25px;
+  height: 100%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.title {
+  font-size: 25px;
+  color: white;
+  margin-left: 2%;
+}
+
+.mat-toolbar {
+  background: linear-gradient(to bottom left, #2DBAB1 45%, #21ABA5 50%);
+}
+
+.principal-image {
+  width: 50px;
+  height: 50px;
+  margin-left: 2%;
+}
+
+.mat-icon {
+  color: white;
+}
+
+.mat-card-title{
+  margin-left: 10px !important;
+}
+
+.card {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-card {
+  background: rgba(45, 186, 177, 0.72) !important;
+  width: 100%;
+  font-family: 'Sarabun', sans-serif;
+  color: white !important;
+}
+
+.todo-status {
+  color: #D80000;
+}
+
+.progress-status {
+  color: #EDCB19;
+}
+
+.completed-status {
+  color: #2DBAB1;
+}
+
+.subject-name{
+  width: 50%;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: bold;
+}
+
+.subject-status{
+  width: 50%;
+  display: inline-block;
+  text-align: right;
+  font-size: 14px;
+}
+
+.subject{
+  margin: 10px 10px 10px 10px;
+}

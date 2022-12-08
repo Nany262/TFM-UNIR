@@ -1,1 +1,44 @@
-<mat-toolbar><h1 id="title-page">Pagina Materias</h1></mat-toolbar>
+<div class="subject-page">
+  <mat-toolbar>
+    <img class="principal-image" src="/assets/img/bag-login.png" alt="image">
+    <h1 class="title" id="title-page">Materias</h1>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="subject-cards">
+    <br>
+    <mat-card class='card' *ngFor="let item of subjects">
+      <div class="subject">
+        <mat-card-title>
+          <div class='subject-name'>
+            {{item.name}}
+          </div>
+          <div class='subject-status'>
+            <mat-icon class='todo-status' *ngIf="item.progress === 'Por Realizar'">
+              error_circle_rounded
+            </mat-icon>
+            <mat-icon class='progress-status' *ngIf="item.progress === 'En proceso'">
+              build_circle
+            </mat-icon>
+            <mat-icon class='completed-status' *ngIf="item.progress === 'Completado'">
+              check_circle
+            </mat-icon>
+            {{item.progress}}
+          </div>
+        </mat-card-title>
+        <br>
+        <mat-card-content>
+          {{item.description}}
+        </mat-card-content>
+        <br>
+        <button class="button-card" mat-flat-button>
+          Entra ahora
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>
