@@ -41,4 +41,8 @@ export class SubjectsComponent {
       this.router.navigateByUrl('/');
     })
   }
+
+  redirectStudents(){
+    this.router.navigateByUrl('/estudiantes');
+  }
 }

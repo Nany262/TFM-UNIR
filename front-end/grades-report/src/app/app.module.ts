@@ -16,6 +16,7 @@ import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { TeachersComponent } from './teachers/teachers.component';
+import { StudentsComponent } from './students/students.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { TeachersComponent } from './teachers/teachers.component';
     AppComponent,
     LoginComponent,
     SubjectsComponent,
-    TeachersComponent
+    TeachersComponent,
+    StudentsComponent
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
