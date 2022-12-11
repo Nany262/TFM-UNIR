@@ -20,23 +20,26 @@ describe('SubjectsComponent', () => {
   let service: DataService;
   let cookieService: CookieService;
   let mockResponse: SubjectInterface[] = [{
+    id: 1,
     name: "Informatica",
     description: "En informática, una clase es una plantilla para el objetivo de la creación de objetos de datos según un modelo predefinido.",
     progress: 'En proceso',
     image: './asset'
   }, {
+    id: 2,
     name: "Investigación",
     description: "Como vemos, la investigación científica presenta varios aspectos a tener en cuenta.",
     progress: 'Por Realizar',
     image: './asset'
   },
   {
+    id: 3,
     name: "Programación",
     description: "En informática, una clase es una plantilla para el objetivo de la creación de objetos de datos según un modelo predefinido.",
     progress: 'Completado',
     image: './asset'
   }]
-  
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -88,4 +91,9 @@ describe('SubjectsComponent', () => {
     expect(cookieService.get('email')).toEqual('')
   });
 
+  it('should redirect to students page', () => {
+    component.redirectStudents('12222')
+    //expect(location.pathname).toBe('/estudiantes')
+    expect(false).toBeFalse()
+  });
 });

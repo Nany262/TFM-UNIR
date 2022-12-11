@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginInterface } from '../login/login.interface';
+import { StudentsInterface } from '../students/students.interface';
 import { SubjectInterface } from '../subjects/subjects.interface';
 
 @Injectable({
@@ -22,5 +23,9 @@ export class DataService {
 
   getSubjects(id: any) {
     return this._http.get<SubjectInterface[]>(`${this.url}/subjects/${id}`)
+  }
+
+  getStudents() {
+    return this._http.get<StudentsInterface[]>(`${this.url}/subjects/`)
   }
 }

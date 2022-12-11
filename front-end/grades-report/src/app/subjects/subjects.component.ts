@@ -42,7 +42,8 @@ export class SubjectsComponent {
     })
   }
 
-  redirectStudents(){
+  redirectStudents(idSubject: string) {
+    this.cookieService.set('idSubject', idSubject);
     this.router.navigateByUrl('/estudiantes');
   }
 }

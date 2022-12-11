@@ -84,4 +84,24 @@ describe('DataService', () => {
     expect(req.request.method).toBe('GET')
     req.flush(mockResponseSubject)
   })
+
+  it('should call getStudents() and return the students of the subject', () => {
+    let mockResponseSubject = {
+      students: [{
+        firstName: "Alberto",
+        lastName: "Cheveroni",
+        id: "11125877742",
+        percentaje: '50%',
+        status: "En progreso"
+      }]
+    }
+    const id = 1
+    service.getSubjects(id).subscribe((user: any) => {
+      expect(user).toEqual(mockResponseSubject)
+    })
+
+    const req = httpMock.expectOne(`http://localhost:3000/students/${id}`)
+    expect(req.request.method).toBe('GET')
+    req.flush(mockResponseSubject)
+  })
 });
