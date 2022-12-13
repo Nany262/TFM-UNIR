@@ -4,7 +4,7 @@ Feature: Subject listing- API Tests
     To evaluate the students according to the rubric
 
     Scenario: Valid structure with a valid subject id
-        Given I want to do a request with the subject id "1" 
+        Given I want to do a request with the subject id "5" 
         When  I do the GET request to "http://localhost:3000/students/" students service
         Then  I expect to see a 200 status on students service
 
