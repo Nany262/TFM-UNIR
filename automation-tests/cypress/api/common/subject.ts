@@ -9,14 +9,14 @@ Given("I want to do a request with the id {string}", (id: string) => {
 });
 
 Given("I want to do a request with a no-valid id", () => {
-    userId = 'id6545555test';
+    userId = 'asdade85';
 });
 
 Given("I want to do a request without id", () => {
     userId = ''
 });
 
-When("I do the GET request to {string} service", (url: string) => {
+When("I do the GET request to {string} subject service", (url: string) => {
     urlFeature = url + userId;
 });
 

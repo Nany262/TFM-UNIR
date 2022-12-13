@@ -18,7 +18,7 @@ When("I see my assigned subjects", () => {
 });
 
 When("I select one of the assigned subjects", () => {
-    generalPage.titlePage().should('be.visible').and('contain', 'Mis materias')
+    generalPage.titlePage().should('be.visible').and('contain', 'Materias')
     subjectsPage.subjectButton().click()
 });
 
@@ -36,5 +36,5 @@ Then("I expect to see the list of students who are enrolled in the subject", () 
 
 Then("I expect to not see the list of subjects without logging in again", () => {
     cy.go('back')
-    generalPage.titlePage().should('be.visible').and('not.contain', 'Mis materias')
+    generalPage.titlePage().should('be.visible').and('not.contain', 'Materias')
 });
