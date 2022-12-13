@@ -13,12 +13,14 @@ export class StudentsComponent {
   emailTeacher: string
   students: StudentsInterface[] = []
   idSubject: string
+  nameSubject: string
 
   constructor(public cookieService: CookieService,
     public dataService: DataService,
     public router: Router) {
     this.emailTeacher = this.cookieService.get('email');
     this.idSubject = this.cookieService.get('idSubject');
+    this.nameSubject = this.cookieService.get('nameSubject');
   }
 
   ngOnInit() {
@@ -35,9 +37,8 @@ export class StudentsComponent {
     const bodyLogout = {
       email: this.emailTeacher
     }
-    this.dataService.putLogout(bodyLogout).subscribe((res) => {
-      console.log(res);
-      this.cookieService.deleteAll();
+    this.cookieService.deleteAll();
+    this.dataService.putLogout(bodyLogout).subscribe((res) => { 
       this.router.navigateByUrl('/');
     })
   }

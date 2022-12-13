@@ -1,15 +1,21 @@
 <div class="student-page">
+
     <mat-toolbar>
-        <img class="principal-image" src="/assets/img/bag-login.png" alt="image">
-        <h1 class="title" id="title-page">Estudiantes</h1>
-        <span class="example-spacer"></span>
-        <button mat-icon-button id="logout-button" (click)="logout()">
-            <mat-icon>exit_to_app</mat-icon>
-        </button>
+        <mat-toolbar-row>
+            <img class="principal-image" src="/assets/img/bag-login.png" alt="image" href="/materias">
+            <h1 class="title" id="title-page">Estudiantes</h1>
+            <span class="example-spacer"></span>
+            <button mat-icon-button id="logout-button" (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="breadcrumb" id="breadcrumb">
+            <a href="/materias">Materias </a> > {{nameSubject}}
+        </mat-toolbar-row>
+
     </mat-toolbar>
 
     <div class="student-cards">
-        <div>Materias>Arte</div>
         <div class="not-found center-content" *ngIf="students.length === 0">
             <img class='image-notfound' src="/assets/img/not-found.png" alt="image">
             <h2 class="text-notfound">Aún no se ha inscrito ningun estudiante</h2>

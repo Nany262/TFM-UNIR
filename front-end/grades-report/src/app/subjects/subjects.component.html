@@ -1,6 +1,6 @@
 <div class="subject-page">
   <mat-toolbar>
-    <img class="principal-image" src="/assets/img/bag-login.png" alt="image">
+    <img class="principal-image" src="/assets/img/bag-login.png" alt="image" href="/materias" >
     <h1 class="title" id="title-page">Materias</h1>
     <span class="example-spacer"></span>
     <button mat-icon-button id="logout-button" (click)="logout()">
@@ -38,7 +38,7 @@
           {{item.description}}
         </mat-card-content>
         <br>
-        <button class="button-card" mat-flat-button (click)="redirectStudents(item.id)">
+        <button class="button-card" mat-flat-button (click)="redirectStudents(item.id, item.name)">
           Entra ahora
           <mat-icon>arrow_forward</mat-icon>
         </button>

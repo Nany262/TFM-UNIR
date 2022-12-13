@@ -45,7 +45,7 @@ export class LoginComponent {
           this.router.navigateByUrl('/materias');
         }
         this.cookieService.set('email', res.email);
-        this.cookieService.set('id', res.id.toString())
+        this.cookieService.set('idTeacher', res.id.toString())
       }
       , error: e => {
         this.invalidLogin = '¡Ooops! Correo o contraseña incorrectas, si olvidaste tu contraseña contacta con tu administrador';

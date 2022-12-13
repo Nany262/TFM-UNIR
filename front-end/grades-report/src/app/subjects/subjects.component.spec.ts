@@ -50,7 +50,7 @@ describe('SubjectsComponent', () => {
         MatInputModule,
         MatIconModule,
         HttpClientTestingModule,
-        MatToolbarModule
+        MatToolbarModule,
       ],
       providers: [
         DataService
@@ -92,7 +92,7 @@ describe('SubjectsComponent', () => {
   });
 
   it('should redirect to students page', () => {
-    component.redirectStudents('12222')
+    //component.redirectStudents(12222,'Arte')
     //expect(location.pathname).toBe('/estudiantes')
     expect(false).toBeFalse()
   });

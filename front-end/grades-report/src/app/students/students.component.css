@@ -129,3 +129,14 @@
 .bar-info{
     display: flex;
 }
+
+.breadcrumb{
+    margin-left: 2%;
+    color: #FFFFFF;
+    font-family: 'Sarabun', sans-serif;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+a:hover { color: #FFFFFF; }
+A:visited {color: #FFFFFF;}

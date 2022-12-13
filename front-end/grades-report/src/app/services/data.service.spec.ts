@@ -96,7 +96,7 @@ describe('DataService', () => {
       }]
     }
     const id = 1
-    service.getSubjects(id).subscribe((user: any) => {
+    service.getStudents(id).subscribe((user: any) => {
       expect(user).toEqual(mockResponseSubject)
     })
 
