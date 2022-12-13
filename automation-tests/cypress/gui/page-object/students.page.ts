@@ -5,4 +5,8 @@ export class StudentsPage {
     }
 
     studentButton() { return cy.get('#student-button') }
+
+    breadcrumb(){
+        return cy.get('#breadcrumb')
+    }
 }

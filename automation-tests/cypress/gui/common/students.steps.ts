@@ -25,3 +25,7 @@ Then("I expect to not see the list of students without logging in again", () => 
     cy.go('back')
     generalPage.titlePage().should('be.visible').and('not.contain', 'Estudiantes')
 });
+
+Then("I expect to see a breadcrumbs to know my location", () => {
+    studentPage.breadcrumb().should('be.visible').and('contain', 'Materias >')
+});
