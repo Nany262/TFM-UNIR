@@ -4,7 +4,7 @@
 
 .student-page {
     background-color: #21ABA5 !important;
-    height: 100%;
+    height:100vh; 
 }
 
 .student-cards {
