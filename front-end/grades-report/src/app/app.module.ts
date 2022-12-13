@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { StudentsComponent } from './students/students.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { StudentsComponent } from './students/students.component';
     MatIconModule,
     MatCardModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressBarModule
   ],
   declarations: [
     AppComponent,

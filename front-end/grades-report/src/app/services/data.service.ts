@@ -25,7 +25,7 @@ export class DataService {
     return this._http.get<SubjectInterface[]>(`${this.url}/subjects/${id}`)
   }
 
-  getStudents() {
-    return this._http.get<StudentsInterface[]>(`${this.url}/subjects/`)
+  getStudents(idSubject: any) {
+    return this._http.get<StudentsInterface[]>(`${this.url}/students/${idSubject}`)
   }
 }
