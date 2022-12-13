@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { SubjectService } from '../services/subject.services';
+import { SubjectService } from '../services/subject.service';
 
 const router = express.Router();
 const subject = new SubjectService();
