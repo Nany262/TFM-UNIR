@@ -104,4 +104,63 @@ describe('DataService', () => {
     expect(req.request.method).toBe('GET')
     req.flush(mockResponseSubject)
   })
+
+  it('should call getKnowledges() and return the knowledges', () => {
+    let mockResponseKnowledge = {
+      knowledges:
+        [{
+          id: "saber1",
+          name: "Saber Conocer",
+          description: "Capacidad para comprender cualquier tipo de información, expresando con sus propias palabras ese saber",
+        }, {
+          id: "saber2",
+          name: "Saber Hacer",
+          description: "Capacidad para aplicar, poner en escena de manera competente un saber",
+        },
+        {
+          id: "saber3",
+          name: "Saber Pensar",
+          description: "Capacidad para descubrir problemas, interpretar y analizar con argumentos y evidencias, eventos, situaciones, textos escritos, visuales y audiovisuales",
+        },
+        {
+          id: "saber4",
+          name: "Saber Innovar",
+          description: "Es la capacidad para proponer, idear, contextualizar, transformar o crear en contextos especificos",
+        },
+        {
+          id: "saber5",
+          name: "Saber Ser",
+          description: "Capacidad para interactuar en sociedad de manera pacifica y constructiva, aplicando valores y priincipios, evidenciando el buen trato, la inclusión, el respeto y la amabilidad con todas las personas",
+        },
+        {
+          id: "saber6",
+          name: "Saber Sentir",
+          description: "Capacidad para sentir y expresar los sentimientos y emociones, permite fortalecer la salud mental",
+        }]
+    }
+    const id = 1
+    service.getStudents(id).subscribe((user: any) => {
+      expect(user).toEqual(mockResponseKnowledge)
+    })
+
+    const req = httpMock.expectOne(`http://localhost:3000/knowledges`)
+    expect(req.request.method).toBe('GET')
+    req.flush(mockResponseKnowledge)
+  })
+
+  it('should call getRubric() and return the rubric to the grades', () => {
+    let mockResponseKnowledge = {
+      id: "1",
+      description: "Buena estructura textual",
+      grade: null,
+    }
+    const id = 1
+    service.getStudents(id).subscribe((user: any) => {
+      expect(user).toEqual(mockResponseKnowledge)
+    })
+
+    const req = httpMock.expectOne(`http://localhost:3000/rubrica/saber1`)
+    expect(req.request.method).toBe('GET')
+    req.flush(mockResponseKnowledge)
+  })
 });

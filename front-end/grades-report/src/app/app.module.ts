@@ -18,6 +18,7 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { StudentsComponent } from './students/students.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { GradesComponent } from './grades/grades.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     LoginComponent,
     SubjectsComponent,
     TeachersComponent,
-    StudentsComponent
+    StudentsComponent,
+    GradesComponent
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
