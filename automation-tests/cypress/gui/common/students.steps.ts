@@ -9,10 +9,6 @@ When("I select one of the students enrolled", () => {
     studentPage.studentButton().click()
 });
 
-When("I log out of the app", () => {
-    generalPage.logoutButton().click()
-});
-
 Then("I expect to see the status in which the student qualification process is located", () => {
     studentPage.studentStatus().should('be.visible')
 });

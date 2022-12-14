@@ -22,7 +22,7 @@ Feature: Subject listing - GUI Tests
     Scenario: Logout - Students list
         Given I login with the email "gloaocampo@liceoingles.edu.co" and password "Test1234"
         When  I log out of the app
-        Then  I expect to not see the list of subjects without logging in again
+        Then  I expect to not see the list of students without logging in again
 
     Scenario: Breadcrumbs - Students list
         Given I login with the email "gloaocampo@liceoingles.edu.co" and password "Test1234"
