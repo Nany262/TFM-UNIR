@@ -22,6 +22,8 @@ import { GradesComponent } from './grades/grades.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { RubricComponent } from './rubric/rubric.component';
 import { MatTableModule } from '@angular/material/table';
+import { DialoganimationComponent } from './dialoganimation/dialoganimation.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -37,7 +39,8 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     MatProgressBarModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   declarations: [
     AppComponent,
@@ -46,7 +49,8 @@ import { MatTableModule } from '@angular/material/table';
     TeachersComponent,
     StudentsComponent,
     GradesComponent,
-    RubricComponent
+    RubricComponent,
+    DialoganimationComponent
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
