@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -66,6 +67,7 @@ describe('GradesComponent', () => {
         MatIconModule,
         HttpClientTestingModule,
         MatToolbarModule,
+        MatDialogModule
       ],
       providers: [
         DataService
@@ -124,5 +126,4 @@ describe('GradesComponent', () => {
     //expect(cookieService.get('email')).toEqual('')
     expect(false).toBeFalse()
   });
-
 });

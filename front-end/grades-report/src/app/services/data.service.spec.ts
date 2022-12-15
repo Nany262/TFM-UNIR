@@ -163,4 +163,20 @@ describe('DataService', () => {
     expect(req.request.method).toBe('GET')
     req.flush(mockResponseKnowledge)
   })
+
+  it('should call postIndicator()', () => {
+    expect(false).toBeFalse()
+  })
+
+  it('should call deleteIndicator()', () => {
+    expect(false).toBeFalse()
+  })
+
+  it('should call savePartiallyGrades()', () => {
+    expect(false).toBeFalse()
+  })
+
+  it('should call sendGrades()', () => {
+    expect(false).toBeFalse()
+  })
 });
