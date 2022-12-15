@@ -20,6 +20,6 @@ const ELEMENT_DATA: RubricInterface[] = [
   styleUrls: ['./rubric.component.css']
 })
 export class RubricComponent {
-  displayedColumns: string[] = ['indicator', 'superior', 'high', 'medium', 'low'];
+  displayedColumns: string[] = ['indicator', 'superior', 'high', 'medium', 'low', 'action'];
   dataSource = ELEMENT_DATA;
 }
