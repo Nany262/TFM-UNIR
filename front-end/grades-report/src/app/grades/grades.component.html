@@ -1,1 +1,58 @@
-<p>grades works!</p>
+<div class="student-page">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <img class="principal-image" src="/assets/img/bag-login.png" alt="image" href="/materias">
+            <div class="info-student">
+                <h1 class="title" id="title-page">{{nameStudent}}</h1>
+                <h5 class="subtitle">{{idStudent}}</h5>
+            </div>
+            <span class="example-spacer"></span>
+            <button mat-icon-button id="logout-button" (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row class="breadcrumb" id="breadcrumb">
+            <a href="/materias">Materias </a> > <a href="/estudiantes">{{nameSubject}} </a> > Estudiante
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="knowledges">
+        <div class="knowledges-panel">
+            <mat-expansion-panel *ngFor="let item of knowledges">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{item.name}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{item.description}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <app-rubric></app-rubric>
+            </mat-expansion-panel>
+        </div>
+        <div id="comment-general">
+            <div class="comment-title">
+                <div class="circle">
+                    <mat-icon>
+                        rate_review
+                    </mat-icon>
+                </div>
+                <h2>Comentarios</h2>
+            </div>
+
+            <mat-form-field class="full-size">
+                <textarea matInput placeholder="Deja un comentario respecto al estudiante"></textarea>
+            </mat-form-field>
+        </div>
+        <div id="save-buttons" class="center-content">
+            <button class="button-card" mat-flat-button>
+                Guardar
+                <mat-icon>save</mat-icon>
+            </button>
+            <button class="button-card" mat-flat-button>
+                Enviar
+                <mat-icon>send</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

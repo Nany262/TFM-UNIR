@@ -38,11 +38,13 @@ export class StudentsComponent {
       email: this.emailTeacher
     }
     this.cookieService.deleteAll();
-    this.dataService.putLogout(bodyLogout).subscribe((res) => { 
+    this.dataService.putLogout(bodyLogout).subscribe((res) => {
       this.router.navigateByUrl('/');
     })
   }
-  redirectGrades() {
+  redirectGrades(idStudent: string, nameStudent: string) {
+    this.cookieService.set('idStudent', idStudent);
+    this.cookieService.set('nameStudent', nameStudent);
     this.router.navigateByUrl('/saberes');
   }
 }

@@ -54,7 +54,7 @@
                     </div>
                     <mat-progress-bar mode="determinate" value="item.percentaje"></mat-progress-bar>
                     <br>
-                    <button class="button-card" mat-flat-button (click)="redirectGrades()">
+                    <button class="button-card" mat-flat-button (click)="redirectGrades(item.id, item.firstName+' '+item.lastName)">
                         Ver saberes
                         <mat-icon>arrow_forward</mat-icon>
                     </button>

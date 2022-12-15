@@ -139,11 +139,11 @@ describe('DataService', () => {
         }]
     }
     const id = 1
-    service.getStudents(id).subscribe((user: any) => {
+    service.getKnowledges().subscribe((user: any) => {
       expect(user).toEqual(mockResponseKnowledge)
     })
 
-    const req = httpMock.expectOne(`http://localhost:3000/knowledges`)
+    const req = httpMock.expectOne(`http://localhost:3000/grades/knowledges`)
     expect(req.request.method).toBe('GET')
     req.flush(mockResponseKnowledge)
   })
@@ -155,11 +155,11 @@ describe('DataService', () => {
       grade: null,
     }
     const id = 1
-    service.getStudents(id).subscribe((user: any) => {
+    service.getKnowledges().subscribe((user: any) => {
       expect(user).toEqual(mockResponseKnowledge)
     })
 
-    const req = httpMock.expectOne(`http://localhost:3000/rubrica/saber1`)
+    const req = httpMock.expectOne(`http://localhost:3000/grades/knowledges`)
     expect(req.request.method).toBe('GET')
     req.flush(mockResponseKnowledge)
   })

@@ -31,8 +31,8 @@ export class DataService {
     return this._http.get<StudentsInterface[]>(`${this.url}/students/${idSubject}`)
   }
 
-  getKnowledges(idSubject: any) {
-    return this._http.get<KnowledgeInterface[]>(`${this.url}/students/${idSubject}`)
+  getKnowledges() {
+    return this._http.get<KnowledgeInterface[]>(`${this.url}/grades/knowledges`)
   }
 
   getRubric(idSubject: any) {

@@ -11,14 +11,17 @@ import { MatInputModule } from '@angular/material/input'
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { StudentsComponent } from './students/students.component';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { GradesComponent } from './grades/grades.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { RubricComponent } from './rubric/rubric.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -32,7 +35,9 @@ import { GradesComponent } from './grades/grades.component';
     MatCardModule,
     HttpClientModule,
     MatToolbarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatExpansionModule,
+    MatTableModule
   ],
   declarations: [
     AppComponent,
@@ -40,7 +45,8 @@ import { GradesComponent } from './grades/grades.component';
     SubjectsComponent,
     TeachersComponent,
     StudentsComponent,
-    GradesComponent
+    GradesComponent,
+    RubricComponent
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },

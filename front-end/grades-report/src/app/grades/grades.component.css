@@ -1,0 +1,132 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.student-page {
+    background-color: #21ABA5 !important;
+    height: 100%;
+}
+
+.title {
+    font-size: 25px;
+    color: white;
+    margin-left: 5%;
+    margin-bottom: 0;
+
+}
+
+.subtitle {
+    color: white;
+    margin-left: 5%;
+    margin-top: 0;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: lighter;
+}
+
+.mat-toolbar {
+    background: linear-gradient(to bottom left, #2DBAB1 45%, #21ABA5 50%);
+}
+
+.principal-image {
+    width: 60px;
+    height: 60px;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.info-student {
+    margin-top: 2%;
+}
+
+#logout-button {
+    margin-top: 2%;
+}
+
+.mat-icon {
+    color: white;
+}
+
+.breadcrumb {
+    margin-top: 1%;
+    margin-left: 2%;
+    color: #FFFFFF;
+    font-family: 'Sarabun', sans-serif;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+A:visited {
+    color: #FFFFFF;
+}
+
+.knowledges {
+    background-color: white;
+    border-radius: 25px;
+    height: 100%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.knowledges-panel {
+    padding-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+mat-expansion-panel {
+    margin-bottom: 15px;
+    background-color: #F6F6F6;
+    font-family: 'Sarabun', sans-serif;
+}
+
+.circle {
+    background-color: #2DBAB1;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px 10px 10px 10px;
+}
+
+h2 {
+    font-family: 'Sarabun', sans-serif;
+}
+
+#comment-general {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.comment-title{
+    display: flex;
+}
+
+.full-size{
+    width: 100%;
+    height: 150px;
+}
+
+button {
+    background: rgba(45, 186, 177, 0.72) !important;
+    font-family: 'Sarabun', sans-serif;
+    color: white !important;
+    margin-left: 50px;
+    width: 200px;
+}
+
+#save-buttons{
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
