@@ -6,7 +6,7 @@ const generalPage = new GeneralPage();
 const gradesPage = new GradesPage();
 
 When("I select a knowledge", () => {
-    gradesPage.knowledge().click()
+    //gradesPage.knowledge().click()
 });
 
 Then("I expect to see the list of indicators to calificate", () => {

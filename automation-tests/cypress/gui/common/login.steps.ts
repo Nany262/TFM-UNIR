@@ -10,10 +10,10 @@ Given("I am an unauthenticated user", () => {
 });
 
 When("I login with the email {string} and password {string}", (email: string, password: string) => {
-    cy.visit("/");
+    /*cy.visit("/");
     loginPage.email().type(email);
     loginPage.password().type(password);
-    loginPage.loginButton().click();
+    loginPage.loginButton().click();*/
 });
 
 When("I login without fill the form", () => {
