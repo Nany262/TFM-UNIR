@@ -1,0 +1,59 @@
+<div class="student-page">
+
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <img class="principal-image" src="/assets/img/bag-login.png" alt="image" href="/materias">
+            <h1 class="title" id="title-page">Profesores</h1>
+            <span class="example-spacer"></span>
+            <button mat-icon-button id="logout-button" (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="student-cards">
+        <div class="not-found center-content" *ngIf="teachers.length === 0">
+            <img class='image-notfound' src="/assets/img/not-found.png" alt="image">
+            <h2 class="text-notfound">Aún no se ha cargado ningun profesor</h2>
+        </div>
+        <br>
+        <mat-card class='card' *ngFor="let item of teachers">
+            <div class="student">
+                <mat-card-title>
+                    <div class="rectangle">
+                        <div class="circle">
+                            <mat-icon>
+                                bookmarks
+                            </mat-icon>
+                        </div>
+                        <div class='student-name'>
+                            {{item.firstName}} {{item.lastName}}
+                        </div>
+                    </div>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="bar-info" *ngFor="let s of item.subjects">
+                        <p id="percentaje">{{s.name}}</p>
+                        <div class='student-status'>
+                            <mat-icon class='todo-status' *ngIf="s.progress === 'Por Realizar'">
+                                error_circle_rounded
+                            </mat-icon>
+                            <mat-icon class='progress-status' *ngIf="s.progress === 'En Proceso'">
+                                build_circle
+                            </mat-icon>
+                            <mat-icon class='completed-status' *ngIf="s.progress === 'Completado'">
+                                check_circle
+                            </mat-icon>
+                            {{s.progress}}
+                        </div>
+                    </div>
+                    <br>
+                    <button class="button-card" mat-flat-button>
+                        Revisar informes
+                        <mat-icon>arrow_outward</mat-icon>
+                    </button>
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>

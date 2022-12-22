@@ -179,4 +179,8 @@ describe('DataService', () => {
   it('should call sendGrades()', () => {
     expect(false).toBeFalse()
   })
+
+  it('should call getTeachers()', () => {
+    expect(false).toBeFalse()
+  })
 });

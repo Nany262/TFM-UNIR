@@ -6,6 +6,7 @@ import { RubricInterface } from '../grades/rubric.interface';
 import { LoginInterface } from '../login/login.interface';
 import { StudentsInterface } from '../students/students.interface';
 import { SubjectInterface } from '../subjects/subjects.interface';
+import { TeacherInterface } from '../teachers/teacher.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,9 @@ export class DataService {
 
   getRubric(idSubject: any) {
     return this._http.get<RubricInterface[]>(`${this.url}/students/${idSubject}`)
+  }
+
+  getTeachers() {
+    return this._http.get<TeacherInterface[]>(`${this.url}/teachers`)
   }
 }
