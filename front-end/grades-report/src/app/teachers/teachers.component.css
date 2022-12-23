@@ -144,3 +144,11 @@
 
 a:hover { color: #FFFFFF; }
 A:visited {color: #FFFFFF;}
+
+.send-button{
+    margin-top: 50px;
+    margin-left: 45%;
+    background: rgba(45, 186, 177, 0.72) !important;
+    font-family: 'Sarabun', sans-serif;
+    color: white !important;
+}

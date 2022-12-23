@@ -1,1 +1,28 @@
-<p>reports works!</p>
+<div class="student-page">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <img class="principal-image" src="/assets/img/bag-login.png" alt="image" href="/materias">
+            <h1 class="title" id="title-page">Reportes</h1>
+            <span class="example-spacer"></span>
+            <button mat-icon-button id="logout-button" (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row class="breadcrumb" id="breadcrumb">
+            <a href="/profesores">Profesores </a> > Profesor: {{teacherSelectedName}}
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="knowledges">
+        <div class="knowledges-panel">
+            <mat-expansion-panel *ngFor="let item of students">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{item.firstName}} {{item.lastName}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <app-rubric></app-rubric>
+            </mat-expansion-panel>
+        </div>
+    </div>
+</div>

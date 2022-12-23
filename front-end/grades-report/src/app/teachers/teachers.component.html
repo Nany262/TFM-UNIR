@@ -48,12 +48,17 @@
                         </div>
                     </div>
                     <br>
-                    <button class="button-card" mat-flat-button>
+                    <button class="button-card" mat-flat-button (click)="redirectReport(item.id, item.firstName, item.lastName)">
                         Revisar informes
                         <mat-icon>arrow_outward</mat-icon>
                     </button>
                 </mat-card-content>
             </div>
         </mat-card>
+
+        <button class="send-button" mat-flat-button (click)="openDialog('0ms', '0ms')">
+            Enviar calificaciones
+            <mat-icon>mail</mat-icon>
+        </button>
     </div>
 </div>
