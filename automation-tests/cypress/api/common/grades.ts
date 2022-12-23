@@ -44,5 +44,5 @@ Then("I expect to see a {int} status on grades service", (status: string) => {
 });
 
 Then("I expect to see {int} status on grades service", (status: string) => {
-    expect(400).to.eq(400)
+    expect(400).to.eq(status)
 });
