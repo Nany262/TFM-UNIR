@@ -69,3 +69,35 @@ Feature: Grades - API Tests
         Given I want to send my work to the coordinator
         When  I do the POST request to "http://localhost:3000/grades/sendGrades" grades service
         Then  I expect to see 415 status on grades service
+
+
+
+    Scenario: Valid structure when send the grades to the parents
+        Given I want to send the grades to the parents
+        When  I do the POST request to "http://localhost:3000/grades/sendEmails" grades service
+        Then  I expect to see 201 status on grades service
+
+    Scenario: Valid structure on send grades to the parents with a empty body
+        Given I want to do a request with empty body
+        When  I do the POST request to "http://localhost:3000/grades/sendEmails" grades service
+        Then  I expect to see 415 status on grades service
+
+    Scenario: Valid structure on send grades to the parents without a body
+        Given I want to do a request without body
+        When  I do the POST request to "http://localhost:3000/grades/sendEmails" grades service
+        Then  I expect to see 415 status on grades service
+
+    Scenario: Valid structure when send the grades to review
+        Given I want to send the grades to review
+        When  I do the POST request to "http://localhost:3000/grades/review" grades service
+        Then  I expect to see 201 status on grades service
+
+    Scenario: Valid structure on send grades to review with a empty body
+        Given I want to do a request with empty body
+        When  I do the POST request to "http://localhost:3000/grades/review" grades service
+        Then  I expect to see 415 status on grades service
+
+    Scenario: Valid structure on send grades to review without a body
+        Given I want to do a request without body
+        When  I do the POST request to "http://localhost:3000/grades/review" grades service
+        Then  I expect to see 415 status on grades service

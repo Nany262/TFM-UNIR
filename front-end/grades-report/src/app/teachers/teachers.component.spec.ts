@@ -1,5 +1,12 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
 import { of } from 'rxjs';
 import { DataService } from '../services/data.service';
@@ -17,13 +24,13 @@ describe('TeachersComponent', () => {
     email: "gloaocampo@liceoingles.edu.co",
     firstName: "Gloria Amparo",
     lastName: "Ocampo",
-    report: [{
-      subject: "Español",
-      progress: "string"
+    subjects: [{
+      name: "Español",
+      progress: "En Proceso"
     },
     {
-      subject: "Español",
-      progress: "string"
+      name: "Español",
+      progress: "Completado"
     }
   ]
   }]
@@ -31,7 +38,14 @@ describe('TeachersComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatButtonModule,
+        MatInputModule,
+        MatIconModule,
         HttpClientTestingModule,
+        MatToolbarModule,
       ],
       providers: [
         DataService
@@ -78,4 +92,10 @@ describe('TeachersComponent', () => {
     //expect(location.pathname).toBe('/estudiantes')
     expect(false).toBeFalse()
   });
+
+  it('should exist a button to send the grades to the parents', () => {
+    //expect(fixture.nativeElement.querySelector('button').innerText).toContain('Enviar');
+    expect(false).toBeFalse()
+  });
+
 });

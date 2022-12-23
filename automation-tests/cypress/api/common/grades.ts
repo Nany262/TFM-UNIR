@@ -23,6 +23,14 @@ Given("I want to save partially my work", () => {
     indicator = '¡asad! e85';
 });
 
+Given("I want to send the grades to the parents", () => {
+
+});
+
+Given("I want to send the grades to review", () => {
+
+});
+
 When("I do the POST request to {string} grades service", (url: string) => {
     urlFeature = url + indicator;
 });

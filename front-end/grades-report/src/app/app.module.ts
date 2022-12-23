@@ -24,6 +24,7 @@ import { RubricComponent } from './rubric/rubric.component';
 import { MatTableModule } from '@angular/material/table';
 import { DialoganimationComponent } from './dialoganimation/dialoganimation.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReportsComponent } from './reports/reports.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     StudentsComponent,
     GradesComponent,
     RubricComponent,
-    DialoganimationComponent
+    DialoganimationComponent,
+    ReportsComponent
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
