@@ -23,7 +23,7 @@ When("I select one of the assigned subjects", () => {
 });
 
 When("I log out of the app", () => {
-    generalPage.logoutButton().click()
+    //generalPage.logoutButton().click()
 });
 
 Then("I expect to see the status in which the subject qualification process is located", () => {

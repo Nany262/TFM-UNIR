@@ -12,4 +12,8 @@ Then("I expect to not see the list of teachers without logging in again", () => 
 });
 
 Then("I can see the option disabled", () => {
+    
+});
+
+Then("I can see the student list and its associated report", () => {
 });
