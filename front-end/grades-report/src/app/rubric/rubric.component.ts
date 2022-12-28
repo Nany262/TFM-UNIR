@@ -1,18 +1,7 @@
-import { Component } from '@angular/core';
-
-export interface RubricInterface {
-  indicator:string,
-  superior:string,
-  high:string,
-  medium:string,
-  low:string
-}
-
-const ELEMENT_DATA: RubricInterface[] = [
-  { indicator: 'Producir creaciones plásticas bidimensionales que permitan expresarse, identificando el entorno próximo y el imaginario', superior: ' ', high: ' ', medium: ' ', low: ' ' },
-  { indicator: 'Interpretar e improvisar composiciones sencillas, utilizando las posibilidades sonoras de la voz, del cuerpo y de los instrumentos musicales, para expresar sentimientos o sonorizar situaciones', superior:  '', high: ' ', medium: ' ', low: ' ' },
-  { indicator: ' Interpretar, utilizando el cuerpo como instrumento de expresión', superior: '', high: '', medium: '', low: '' },
-];
+import { Component, Input } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { RubricInterface } from '../interfaces/rubric.interface';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-rubric',
@@ -21,5 +10,25 @@ const ELEMENT_DATA: RubricInterface[] = [
 })
 export class RubricComponent {
   displayedColumns: string[] = ['indicator', 'superior', 'high', 'medium', 'low', 'action'];
-  dataSource = ELEMENT_DATA;
+  indicators: RubricInterface[] = [];
+  idStudent: string;
+  teacherSelectedId: string;
+  idSubject: string
+  @Input() idKnowledge: string;
+
+  constructor(public cookieService: CookieService,
+    public dataService: DataService) {
+    this.idStudent = this.cookieService.get('idStudent');
+    this.teacherSelectedId = this.cookieService.get('teacherSelectedId');
+    this.idSubject = this.cookieService.get('idSubject');
+  }
+
+  ngOnInit() {
+    console.log(this.idKnowledge)
+    this.dataService.getRubric(this.idSubject, this.idKnowledge).subscribe({
+      next: (res) => {
+        this.indicators = res
+      }
+    })
+  }
 }

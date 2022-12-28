@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DataService } from '../services/data.service';
-import { SubjectInterface } from './subjects.interface';
+import { SubjectInterface } from '../interfaces/subjects.interface';
 import { of } from 'rxjs';
 
 import { SubjectsComponent } from './subjects.component';

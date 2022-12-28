@@ -2,9 +2,9 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CookieService } from 'ngx-cookie-service';
 import { of } from 'rxjs';
-import { RubricInterface } from '../grades/rubric.interface';
+import { RubricInterface } from '../interfaces/rubric.interface';
 import { DataService } from '../services/data.service';
-import { StudentsInterface } from '../students/students.interface';
+import { StudentsInterface } from '../interfaces/students.interface';
 
 import { ReportsComponent } from './reports.component';
 

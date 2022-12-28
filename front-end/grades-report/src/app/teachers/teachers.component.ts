@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { DialoganimationComponent } from '../dialoganimation/dialoganimation.component';
 import { DataService } from '../services/data.service';
-import { TeacherInterface } from './teacher.interface';
+import { TeacherInterface } from '../interfaces/teacher.interface';
 
 @Component({
   selector: 'app-teachers',

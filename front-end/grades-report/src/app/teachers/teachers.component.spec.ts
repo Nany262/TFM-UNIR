@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
 import { of } from 'rxjs';
 import { DataService } from '../services/data.service';
-import { TeacherInterface } from './teacher.interface';
+import { TeacherInterface } from '../interfaces/teacher.interface';
 
 import { TeachersComponent } from './teachers.component';
 

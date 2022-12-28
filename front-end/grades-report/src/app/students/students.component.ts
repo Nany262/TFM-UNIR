@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { DataService } from '../services/data.service';
-import { StudentsInterface } from './students.interface';
+import { StudentsInterface } from '../interfaces/students.interface';
 
 @Component({
   selector: 'app-students',

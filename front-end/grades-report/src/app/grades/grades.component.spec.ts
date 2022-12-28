@@ -13,8 +13,8 @@ import { of } from 'rxjs';
 import { DataService } from '../services/data.service';
 
 import { GradesComponent } from './grades.component';
-import { KnowledgeInterface } from './knowledge.interface';
-import { RubricInterface } from './rubric.interface';
+import { KnowledgeInterface } from '../interfaces/knowledge.interface';
+import { RubricInterface } from '../interfaces/rubric.interface';
 
 describe('GradesComponent', () => {
   let component: GradesComponent;

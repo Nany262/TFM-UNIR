@@ -4,7 +4,7 @@ import { DataService } from '../services/data.service';
 import { of } from 'rxjs';
 
 import { StudentsComponent } from './students.component';
-import { StudentsInterface } from './students.interface';
+import { StudentsInterface } from '../interfaces/students.interface';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';

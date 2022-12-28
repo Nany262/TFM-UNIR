@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { DataService } from '../services/data.service';
-import { KnowledgeInterface } from './knowledge.interface';
-import {MatDialog} from '@angular/material/dialog';
+import { KnowledgeInterface } from '../interfaces/knowledge.interface';
+import { MatDialog } from '@angular/material/dialog';
 import { DialoganimationComponent } from '../dialoganimation/dialoganimation.component';
 
 @Component({
@@ -39,7 +39,7 @@ export class GradesComponent {
       this.router.navigateByUrl('/');
     })
   }
-  
+
   ngOnInit() {
     if (this.emailTeacher != '' && this.idSubject != '') {
       this.dataService.getKnowledges().subscribe((res) => {
@@ -57,5 +57,4 @@ export class GradesComponent {
       exitAnimationDuration,
     });
   }
-
 }

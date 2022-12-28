@@ -13,11 +13,11 @@ router.get('/knowledges', (req: Request, res: Response, next: any) => {
     }
 });
 
-
-router.get('/rubric/:idKnowledge', (req: Request, res: Response, next: any) => {
+router.get('/rubric/:idSubject/:idKnowledge', (req: Request, res: Response, next: any) => {
+    const { idSubject } = req.params
     const { idKnowledge } = req.params
     try {
-        grades.listAll(res, next)
+        grades.listRubric(idSubject, idKnowledge, res, next)
     } catch (error) {
         next();
     }

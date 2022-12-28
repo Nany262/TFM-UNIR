@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { KnowledgeInterface } from '../grades/knowledge.interface';
-import { RubricInterface } from '../grades/rubric.interface';
-import { LoginInterface } from '../login/login.interface';
-import { StudentsInterface } from '../students/students.interface';
-import { SubjectInterface } from '../subjects/subjects.interface';
-import { TeacherInterface } from '../teachers/teacher.interface';
+import { KnowledgeInterface } from '../interfaces/knowledge.interface';
+import { RubricInterface } from '../interfaces/rubric.interface';
+import { LoginInterface } from '../interfaces/login.interface';
+import { StudentsInterface } from '../interfaces/students.interface';
+import { SubjectInterface } from '../interfaces/subjects.interface';
+import { TeacherInterface } from '../interfaces/teacher.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +36,8 @@ export class DataService {
     return this._http.get<KnowledgeInterface[]>(`${this.url}/grades/knowledges`)
   }
 
-  getRubric(idSubject: any) {
-    return this._http.get<RubricInterface[]>(`${this.url}/students/${idSubject}`)
+  getRubric(idSubject: any, idKnowledge:string) {
+    return this._http.get<RubricInterface[]>(`${this.url}/grades/rubric/${idSubject}/${idKnowledge}`)
   }
 
   getTeachers() {

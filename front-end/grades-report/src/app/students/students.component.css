@@ -4,13 +4,13 @@
 
 .student-page {
     background-color: #21ABA5 !important;
-    height:100vh; 
+    height:100%;
 }
 
 .student-cards {
     background-color: white;
     border-radius: 25px;
-    height: 90%;
+    height: 100%;
     margin-left: 1%;
     margin-right: 1%;
 }
@@ -131,12 +131,16 @@
 }
 
 .breadcrumb{
-    margin-left: 2%;
     color: #FFFFFF;
     font-family: 'Sarabun', sans-serif;
     height: 40px;
     margin-bottom: 10px;
 }
 
-a:hover { color: #FFFFFF; }
+.text-breadcrumb{
+    margin-left: 50px;
+}
+
+a:hover { color: #FFFFFF;
+ }
 A:visited {color: #FFFFFF;}

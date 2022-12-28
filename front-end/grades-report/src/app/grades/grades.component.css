@@ -4,7 +4,7 @@
 
 .student-page {
     background-color: #21ABA5 !important;
-    height: 100%;
+    height: max-content;
 }
 
 .title {
@@ -66,7 +66,7 @@ A:visited {
 .knowledges {
     background-color: white;
     border-radius: 25px;
-    height: 100%;
+    height: max-content;
     margin-left: 1%;
     margin-right: 1%;
 }

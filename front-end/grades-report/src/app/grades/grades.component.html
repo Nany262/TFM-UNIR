@@ -27,7 +27,7 @@
                         {{item.description}}
                     </mat-panel-description>
                 </mat-expansion-panel-header>
-                <app-rubric></app-rubric>
+                <app-rubric [idKnowledge]="item.id"></app-rubric>
             </mat-expansion-panel>
         </div>
         <div id="comment-general">
@@ -45,7 +45,7 @@
             </mat-form-field>
         </div>
         <div id="save-buttons" class="center-content">
-            <button class="button-card" mat-flat-button >
+            <button class="button-card" mat-flat-button>
                 Guardar
                 <mat-icon>save</mat-icon>
             </button>

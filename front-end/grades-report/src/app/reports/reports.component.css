@@ -116,8 +116,9 @@ button {
     background: rgba(45, 186, 177, 0.72) !important;
     font-family: 'Sarabun', sans-serif;
     color: white !important;
-    margin-left: 50px;
+    margin-left: 43%;
     width: 200px;
+    margin-top: 20px;
 }
 
 #save-buttons{

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { KnowledgeInterface } from '../grades/knowledge.interface';
+import { KnowledgeInterface } from '../interfaces/knowledge.interface';
 import { DataService } from '../services/data.service';
-import { StudentsInterface } from '../students/students.interface';
-import { SubjectInterface } from '../subjects/subjects.interface';
+import { StudentsInterface } from '../interfaces/students.interface';
+import { SubjectInterface } from '../interfaces/subjects.interface';
 
 @Component({
   selector: 'app-reports',
@@ -53,7 +53,6 @@ export class ReportsComponent {
             }
           })
         }
-
       })
     } else {
       this.router.navigateByUrl('/');

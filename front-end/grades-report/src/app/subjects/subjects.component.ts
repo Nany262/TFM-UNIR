@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { DataService } from '../services/data.service';
-import { SubjectInterface } from './subjects.interface';
+import { SubjectInterface } from '../interfaces/subjects.interface';
 
 @Component({
   selector: 'app-subjects',

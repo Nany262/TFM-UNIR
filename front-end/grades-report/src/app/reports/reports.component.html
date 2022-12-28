@@ -21,7 +21,15 @@
                         {{item.firstName}} {{item.lastName}}
                     </mat-panel-title>
                 </mat-expansion-panel-header>
-                <app-rubric></app-rubric>
+                <h2>Arte</h2>
+                <div class="report" *ngFor="let knowledge of knowledges">
+                    <h3>{{knowledge.name}}</h3>
+                    <app-rubric></app-rubric>
+                </div>
+                <button class="button-card" mat-flat-button>
+                    Finalizar revisión
+                    <mat-icon>star</mat-icon>
+                </button>
             </mat-expansion-panel>
         </div>
     </div>
