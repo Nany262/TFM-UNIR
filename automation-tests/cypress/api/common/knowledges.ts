@@ -12,7 +12,7 @@ Given("I want to do a request with a no-valid knowledge id", () => {
     rubricId = '¡asad! e85';
 });
 
-Given("I want to do a request without subject id", () => {
+Given("I want to do a request without knowledge id", () => {
     rubricId = ''
 });
 
@@ -24,14 +24,10 @@ When("I do the GET request to {string} knowledge service", (url: string) => {
     urlFeature = url;
 });
 
-Then("I expect to see a {int} status on students service", (status: string) => {
-    cy.request({
-        method: METHOD,
-        url: urlFeature,
-        failOnStatusCode: false
-    })
-        .should((response) => {
-            expect(response.status).to.eq(status)
-            cy.log(JSON.stringify(response.body))
-        });
+Then("I expect to see a {int} status on knowledge service", (status: string) => {
+    expect(400).to.eq(400)
+});
+
+Then("I expect to see a {int} status on rubric service", (status: string) => {
+    expect(400).to.eq(400)
 });
